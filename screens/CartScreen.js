@@ -206,7 +206,10 @@ const CartScreen = ({navigation}) => {
       )}
       {cart.length === 0 ? null : (
         <View style={{marginHorizontal: 30}}>
-          <PrimaryButton title="CHECKOUT" />
+          <PrimaryButton
+            onPress={() => navigation.navigate('SigninScreen')}
+            title="CHECKOUT"
+          />
         </View>
       )}
     </SafeAreaView>
