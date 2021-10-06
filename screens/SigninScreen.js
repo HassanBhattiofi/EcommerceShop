@@ -11,6 +11,9 @@ const SigninScreen = ({navigation}) => {
     <SafeAreaView
       style={{paddingHorizontal: 20, flex: 1, backgroundColor: COLORS.white}}>
       <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{marginLeft: 25, top: 30}}>
+          <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
+        </View>
         <View style={{marginTop: 100, marginLeft: 25, marginRight: 25}}>
           <Text style={{fontSize: 27, fontWeight: 'bold', color: COLORS.dark}}>
             Welcome Back,
