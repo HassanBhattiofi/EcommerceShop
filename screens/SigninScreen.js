@@ -14,7 +14,7 @@ const SigninScreen = ({navigation}) => {
         <View style={{marginLeft: 25, top: 30}}>
           <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
         </View>
-        <View style={{marginTop: 100, marginLeft: 25, marginRight: 25}}>
+        <View style={{marginTop: 80, marginLeft: 25, marginRight: 25}}>
           <Text style={{fontSize: 27, fontWeight: 'bold', color: COLORS.dark}}>
             Welcome Back,
           </Text>
