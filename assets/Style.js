@@ -1,13 +1,22 @@
 import {StyleSheet} from 'react-native';
 import COLORS from './color';
 const STYLES = StyleSheet.create({
-  inputContainer: {flexDirection: 'row', marginTop: 20},
+  inputContainer: {
+    flexDirection: 'row',
+    marginTop: 50,
+    flex: 2,
+    marginLeft: 10,
+    marginRight: 10,
+  },
   input: {
-    color: COLORS.light,
-    paddingLeft: 30,
+    color: COLORS.dark,
+    paddingLeft: 10,
+    paddingBottom: 10,
+    marginLeft: 25,
+    marginRight: 25,
     borderBottomWidth: 1,
-    borderColor: COLORS.light,
-    borderBottomWidth: 0.5,
+    borderColor: COLORS.grey,
+    //borderBottomWidth: 0.5,
     flex: 1,
     fontSize: 18,
   },
@@ -15,7 +24,9 @@ const STYLES = StyleSheet.create({
   btnPrimary: {
     backgroundColor: COLORS.primary,
     height: 50,
-    borderRadius: 5,
+    marginRight: 25,
+    borderRadius: 65,
+    marginLeft: 25,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 50,
