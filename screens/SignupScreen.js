@@ -6,24 +6,24 @@ import COLORS from '../assets/color';
 import STYLES from '../assets/Style';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
-const SigninScreen = ({navigation}) => {
+const SignupScreen = ({navigation}) => {
   return (
     <SafeAreaView
       style={{paddingHorizontal: 20, flex: 1, backgroundColor: COLORS.white}}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{marginLeft: 25, top: 30}}>
+        <View style={{marginLeft: 25, top: 20}}>
           <Icon name="arrow-back-ios" size={28} onPress={navigation.goBack} />
         </View>
-        <View style={{marginTop: 80, marginLeft: 25, marginRight: 25}}>
+        <View style={{marginTop: 40, marginLeft: 25, marginRight: 25}}>
           <Text style={{fontSize: 27, fontWeight: 'bold', color: COLORS.dark}}>
-            Welcome Back,
+            Welcome,
           </Text>
           <Text style={{fontSize: 19, fontWeight: 'bold', color: COLORS.grey}}>
-            Sign in to continue
+            Sign up to continue
           </Text>
         </View>
 
-        <View style={{marginTop: 20}}>
+        <View style={{marginTop: 10}}>
           <View style={STYLES.inputContainer}>
             <Icon
               name="mail-outline"
@@ -31,7 +31,15 @@ const SigninScreen = ({navigation}) => {
               size={20}
               style={STYLES.inputIcon}
             />
-
+            <TextInput placeholder="Name" style={STYLES.input} />
+          </View>
+          <View style={STYLES.inputContainer}>
+            <Icon
+              name="mail-outline"
+              color={COLORS.light}
+              size={20}
+              style={STYLES.inputIcon}
+            />
             <TextInput placeholder="Email" style={STYLES.input} />
           </View>
           <View style={STYLES.inputContainer}>
@@ -47,6 +55,19 @@ const SigninScreen = ({navigation}) => {
               secureTextEntry
             />
           </View>
+          <View style={STYLES.inputContainer}>
+            <Icon
+              name="lock-outline"
+              color={COLORS.light}
+              size={20}
+              style={STYLES.inputIcon}
+            />
+            <TextInput
+              placeholder="Confirm Password"
+              style={STYLES.input}
+              secureTextEntry
+            />
+          </View>
           <View style={STYLES.btnPrimary}>
             <Text
               style={{
@@ -54,7 +75,7 @@ const SigninScreen = ({navigation}) => {
                 fontWeight: 'bold',
                 fontSize: 18,
               }}>
-              Sign In
+              Sign Up
             </Text>
           </View>
           <View
@@ -77,7 +98,7 @@ const SigninScreen = ({navigation}) => {
             }}>
             <View style={STYLES.btnSecondary}>
               <Text style={{fontWeight: 'bold', fontSize: 16}}>
-                Sign in with
+                Sign up with
               </Text>
               <Image
                 style={STYLES.btnImage}
@@ -93,7 +114,7 @@ const SigninScreen = ({navigation}) => {
                   marginLeft: 25,
                   marginRight: 25,
                 }}>
-                Sign in with
+                Sign up with
               </Text>
               <Image
                 style={STYLES.btnImage}
@@ -112,12 +133,12 @@ const SigninScreen = ({navigation}) => {
             marginBottom: 20,
           }}>
           <Text style={{color: COLORS.grey, fontWeight: 'bold'}}>
-            Don`t have an account?
+            Already have an account?
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+          <TouchableOpacity onPress={() => navigation.navigate('SigninScreen')}>
             <Text
               style={{color: COLORS.pink, fontWeight: 'bold', marginLeft: 6}}>
-              Sign Up
+              Sign In
             </Text>
           </TouchableOpacity>
         </View>
@@ -126,4 +147,4 @@ const SigninScreen = ({navigation}) => {
   );
 };
 
-export default SigninScreen;
+export default SignupScreen;

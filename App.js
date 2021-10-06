@@ -8,6 +8,7 @@ import DrawerNavigator from './navigators/DrawerNavigator';
 import CartScreen from './screens/CartScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import SigninScreen from './screens/SigninScreen';
+import SignupScreen from './screens/SignupScreen';
 import COLORS from './assets/color';
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ const App = () => {
           <Stack.Screen name="HomeScreen" component={DrawerNavigator} />
           <Stack.Screen name="CartScreen" component={CartScreen} />
           <Stack.Screen name="DetailScreen" component={DetailsScreen} />
+          <Stack.Screen name="SignUp" component={SignupScreen} />
           <Stack.Screen name="SigninScreen" component={SigninScreen} />
         </Stack.Navigator>
       </NavigationContainer>
