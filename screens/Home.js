@@ -9,10 +9,12 @@ import {
   FlatList,
   Dimensions,
   Image,
+  Button,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {addItemToCart} from '../Redux/Actions/cartActions';
 //import {UseStore} from 'zustand';
+import {useNetInfo} from '@react-native-community/netinfo';
 import COLORS from '../assets/color';
 import cartStore from '../stores/cartStore';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -57,6 +59,8 @@ const Home = ({navigation}) => {
       </View>
     );
   };
+
+  const netInfo = useNetInfo();
 
   useEffect(() => {
     getProducts()
@@ -198,18 +202,35 @@ const Home = ({navigation}) => {
         </View>
       </View>
       <CategoryList />
-      <FlatList
-        columnWrapperStyle={{justifyContent: 'space-evenly'}}
-        showsVerticalScrollIndicator={false}
-        keyExtractor={product._id}
-        contentContainerStyle={{
-          marginTop: 10,
-          paddingBottom: 50,
-        }}
-        data={product}
-        numColumns={2}
-        renderItem={({item}) => <Card product={item} />}
-      />
+      {!netInfo.isConnected ? (
+        <View
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginLeft: 25,
+            marginRight: 25,
+            marginBottom: 25,
+            marginTop: 50,
+          }}>
+          <MaterialIcons size={300} color={COLORS.primary} name="wifi-off" />
+          <Text style={{fontWeight: '200'}}>
+            Please Check Your Internet Connection!
+          </Text>
+        </View>
+      ) : (
+        <FlatList
+          columnWrapperStyle={{justifyContent: 'space-evenly'}}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={product._id}
+          contentContainerStyle={{
+            marginTop: 10,
+            paddingBottom: 50,
+          }}
+          data={product}
+          numColumns={2}
+          renderItem={({item}) => <Card product={item} />}
+        />
+      )}
     </SafeAreaView>
   );
 };
